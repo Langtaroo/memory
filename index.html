@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Papakuu ❤️</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a0f;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212,170,95,0.12), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(212,170,95,0.08), transparent 30%);
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+
+/* STARS */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+
+    background-size: 100px 100px, 160px 160px;
+    background-position: 20px 30px, 80px 90px;
+
+    opacity: 0.25;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+#opening {
+    position: fixed;
+    inset: 0;
+
+    background: #080a0f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 1000;
+
+    transition: 1s ease;
+}
+
+.opening-content {
+    padding: 30px;
+    max-width: 700px;
+
+    animation: appear 1.5s ease;
+}
+
+.opening-small {
+    color: #cda968;
+
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+.opening-content h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 10vw, 110px);
+
+    line-height: 0.9;
+
+    font-weight: normal;
+}
+
+.opening-content h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    color: #d4ad6c;
+
+    margin-top: 15px;
+}
+
+.opening-text {
+    color: #999;
+
+    margin: 30px auto;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    background: #d4ad6c;
+
+    color: #111;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 10px 30px rgba(212,173,108,0.25);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    opacity: 0;
+
+    transition: 1.5s ease;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 25px;
+}
+
+.hero-content {
+    max-width: 850px;
+
+    animation: appear 1.5s ease;
+}
+
+.hero-date {
+    color: #d4ad6c;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(50px, 9vw, 95px);
+
+    font-weight: normal;
+
+    line-height: 1;
+}
+
+.hero h1 span {
+    color: #d4ad6c;
+}
+
+.hero-description {
+    color: #aaa;
+
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    padding: 110px 25px;
+}
+
+.section-container {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.label {
+    color: #d4ad6c;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 7vw, 65px);
+
+    font-weight: normal;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    line-height: 1.9;
+
+    color: #bdbdbd;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.3);
+}
+
+.letter .opening-line {
+    font-family: Georgia, serif;
+
+    color: white;
+
+    font-size: 27px;
+
+    margin-bottom: 25px;
+}
+
+.letter p {
+    margin-bottom: 22px;
+}
+
+.signature {
+    color: #d4ad6c;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    margin-top: 35px;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-section {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.photo-box {
+    width: 100%;
+
+    min-height: 500px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: #14161d;
+}
+
+.photo-box img {
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 1s ease;
+}
+
+.photo-box:hover img {
+    transform: scale(1.04);
+}
+
+.photo-caption {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 60px 30px 30px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.9)
+        );
+}
+
+.photo-caption p {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+.photo-info {
+    color: #666;
+
+    font-size: 12px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise {
+    text-align: center;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.surprise-description {
+    color: #999;
+
+    margin-bottom: 30px;
+}
+
+#secret {
+    display: none;
+
+    margin-top: 45px;
+
+    animation: popup 0.8s ease;
+}
+
+.secret-card {
+    max-width: 600px;
+
+    padding: 50px 40px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(212,173,108,0.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,173,108,0.13),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.5);
+}
+
+.cake {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation: floating 2s ease-in-out infinite;
+}
+
+.secret-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+.secret-card p {
+    color: #bbb;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.big-heart {
+    color: #d4ad6c;
+
+    font-size: 35px;
+
+    margin-top: 20px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    z-index: 100;
+
+    background: #d4ad6c;
+
+    display: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    color: #777;
+}
+
+footer strong {
+    color: #d4ad6c;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    width: 8px;
+    height: 14px;
+
+    top: -20px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: fall 4s linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes popup {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+}
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .letter {
+        padding: 30px 25px;
+    }
+
+    .photo-box img {
+        height: 400px;
+    }
+
+    .photo-caption p {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- STARS -->
+<div class="stars"></div>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<div id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-small">
+            A little surprise for Papa
+        </div>
+
+        <h1>Happy</h1>
+
+        <h2>Birthday ❤️</h2>
+
+        <p class="opening-text">
+            Aku punya sesuatu yang ingin aku sampaikan
+            untuk orang yang menjadi pemimpin dalam
+            keluarga ini.
+        </p>
+
+        <button onclick="openWebsite()">
+            🎁 Buka kotak ini!!
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
+
+<div id="main">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-date">
+                26 SEPTEMBER 2026
+            </div>
+
+            <h1>
+                Happy Birthday,
+                <span>Papa</span>
+            </h1>
+
+            <p class="hero-description">
+                Hari ini adalah hari yang spesial untuk seseorang
+                yang punya peran penting dalam hidup kita
+                
+            </p>
+
+            <button onclick="scrollToMessage()">
+                Lihat Pesanku ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LETTER
+    ========================= -->
+
+    <section>
+
+        <div class="section-container">
+
+            <div class="label">
+                A MESSAGE FROM ME
+            </div>
+
+            <h2 class="section-title">
+                Untuk Papa
+            </h2>
+
+
+            <div class="letter">
+
+                <p class="opening-line">
+                    Selamat ulang tahun, Paaa ❤️
+                </p>
+
+                <p>
+                    Terima kasih sudah selalu berusaha memberikan
+                    yang terbaik untuk kami.
+                </p>
+
+                <p>
+                    Terima kasih untuk semua kerja keras, perhatian,
+                    nasihat, dan hal-hal kecil yang mungkin sering
+                    tidak dengarkan..
+                </p>
+
+                <p>
+                    Aku mungkin nggak selalu bilang secara langsung,
+                    tapi aku sangat bersyukur bisa punya Papa
+                    sebagai sosok yang selalu mendukung dan
+                    menjaga keluarga.
+                </p>
+
+                <p>
+                    Semoga di umur Papa yang sekarang, Papa selalu
+                    diberikan kesehatan, umur panjang, kebahagiaan,
+                    rezeki yang lancar, bisnis yang banyak dan dimudahkan dalam
+                    segala hal. aamiinn.
+                </p>
+
+                <p>
+                    Semoga semua kebaikan dan kerja keras Papa
+                    selama ini dibalas dengan banyak hal baik dan
+                    papa selalu dilindungi dan dikelilingi oleh
+                    orang-orang baikk.
+                </p>
+
+                <p class="signature">
+                    Love,<br>
+                    <strong>Alvaro & Mama ❤️</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PHOTO
+    ========================= -->
+
+    <section>
+
+        <div class="section-container photo-section">
+
+            <div class="label">
+                A SPECIAL MEMORY
+            </div>
+
+            <h2 class="section-title">
+                One of Our Memories
+            </h2>
+
+
+            <div class="photo-box">
+
+                <!--
+                    GANTI FOTO DI SINI
+
+                    Taruh foto di folder yang sama
+                    dengan index.html.
+
+                    Contoh:
+                    foto-papa.jpg
+
+                    Kemudian ubah:
+                    src="foto-papa.jpg"
+                -->
+
+                <img
+                    src="foto-2.png"
+                    alt="Foto Papa"
+                    onerror="this.style.display='none';"
+                >
+
+                <div class="photo-caption">
+
+                    <p>
+                        One of my favorite memories with Papa ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="photo-info">
+                aku selalu ingat moment lucu ini
+                <b>Confetti Ice Cream</b> hingga papa tua
+                semoga masih bisa berkumpul seperti ini, aamiinn
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SURPRISE
+    ========================= -->
+
+    <section class="surprise">
+
+        <div class="label">
+            ONE MORE THING
+        </div>
+
+        <h2 class="section-title">
+            Ada satu hal lagi...
+        </h2>
+
+        <p class="surprise-description">
+            Tapi pesan ini baru boleh dibuka setelah sampai sini.
+        </p>
+
+        <button onclick="showSecret()">
+            ✨ Buka Pesan Rahasia
+        </button>
+
+
+        <div id="secret">
+
+            <div class="secret-card">
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <h3>
+                    Thank You, Paaaaa ❤️
+                </h3>
+
+                <p>
+                   Makasih ya Pa, udah selalu berusaha ngasih
+                    yang terbaik buat aku dan mama. Makasih juga
+                     udah selalu sabar dan selalu berusaha bikin 
+                     aku sama mama bahagia. Semoga Papa selalu sehat, 
+                     panjang umur, bahagia terus, dan ga cape teruss.
+                      Semoga kita bisa jalan-jalan, makan bareng, dan 
+                      bikin banyak cerita lagi hingga papa tua :D .
+                </p>
+
+                <p>
+                    Aku mungkin nggak sering ngomong langsung, tapi 
+                    aku sayang banget sama Papa. ❤️
+                    Happy birthday, Pa! Semoga Papa selalu diberikan
+                     kesehatan dan banyak hal baik ke depannya.
+                </p>
+
+                <p>
+                    Aku sayang Papa.
+                </p>
+
+                <div class="big-heart">
+                    ♥
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ by <strong>Alvaro</strong>
+        </p>
+
+        <p style="margin-top:10px;">
+            Happy Birthday, Papa.
+        </p>
+
+    </footer>
+
+</div>
+
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+    id="musicButton"
+    class="music-button"
+    onclick="toggleMusic()"
+>
+    🎵
+</button>
+
+
+
+
+<audio id="music" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+-->
+
+
+<script>
+
+/* =========================
+   OPEN WEBSITE
+========================= */
+
+function openWebsite() {
+
+    const opening = document.getElementById("opening");
+    const main = document.getElementById("main");
+    const musicButton = document.getElementById("musicButton");
+    const music = document.getElementById("music");
+
+    // Musik langsung dimainkan setelah tombol diklik
+    music.volume = 0.5;
+
+    music.play().then(function() {
+        console.log("Musik berhasil dimainkan");
+    }).catch(function(error) {
+        console.log("Musik tidak bisa dimainkan:", error);
+    });
+
+    // Animasi opening
+    opening.style.opacity = "0";
+
+    setTimeout(function() {
+
+        opening.style.display = "none";
+
+        main.style.opacity = "1";
+
+        musicButton.style.display = "block";
+
+        createConfetti();
+
+    }, 1000);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+function scrollToMessage() {
+
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+function showSecret() {
+
+    const secret = document.getElementById("secret");
+
+    secret.style.display = "block";
+
+    createConfetti();
+
+    setTimeout(function() {
+
+        secret.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 300);
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const colors = [
+        "#d4ad6c",
+        "#ffffff",
+        "#b78d4f",
+        "#eee0c5"
+    ];
+
+    for (let i = 0; i < 100; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.background =
+            colors[
+                Math.floor(Math.random() * colors.length)
+            ];
+
+        piece.style.animationDuration =
+            (Math.random() * 2 + 3) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 0.5 + "s";
+
+        piece.style.transform =
+            "rotate(" +
+            Math.random() * 360 +
+            "deg)";
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(function() {
+
+            piece.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let musicPlaying = false;
+
+function toggleMusic() {
+
+    const music = document.getElementById("music");
+
+    if (!music) {
+
+        alert(
+            "Tambahkan file birthday.mp3 ke folder website terlebih dahulu."
+        );
+
+        return;
+    }
+
+    if (musicPlaying) {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        document.getElementById("musicButton").innerHTML = "🎵";
+
+    } else {
+
+        music.play();
+
+        musicPlaying = true;
+
+        document.getElementById("musicButton").innerHTML = "🔊";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
